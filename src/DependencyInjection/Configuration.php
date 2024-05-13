@@ -29,7 +29,10 @@ final class Configuration implements ConfigurationInterface
         $rootNode
             ->addDefaultsIfNotSet()
             ->children()
-                ->scalarNode('driver')->defaultValue(SyliusResourceBundle::DRIVER_DOCTRINE_ORM)->setDeprecated()->end()
+                ->scalarNode('driver')
+                ->defaultValue(SyliusResourceBundle::DRIVER_DOCTRINE_ORM)
+                ->setDeprecated('loevgaard/sylius-brand-plugin', 'dev-main')
+            ->end()
         ;
 
         $this->addResourcesSection($rootNode);
